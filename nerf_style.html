@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Basic Page Needs
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    
+    <title>Locally Stylized Neural Radiance Fields</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="assets/css" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="assets/skeleton.css">
+    <link rel="stylesheet" href="assets/footable.standalone.min.css">
+
+    <!-- Google icon -->
+    <link rel="stylesheet" href="assets/icon">
+
+    <!-- Hover effect: https://codepen.io/nxworld/pen/ZYNOBZ -->
+    <style>
+      img {
+          display: block;
+      }
+
+      .column-50 {
+          float: left;
+          width: 50%;
+      }
+      .row-50:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+      .floating-teaser {
+          float: left;
+          width: 30%;
+          text-align: center;
+          padding: 15px;
+      }
+      .venue strong {
+          color: #99324b;
+      }
+
+      .benchmark {
+          width: 100%;
+          max-width: 960px;
+          overflow: scroll;
+          overflow-y: hidden;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Primary Page Layout
+         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container" style="padding-top: 30px; padding-bottom: 30px;">
+      <h4 style="text-align:center">Locally Stylized Neural Radiance Fields</h4>
+      <p align="center" ,="" style="margin-bottom:12px;">
+        <a class="simple" href="https://ferrophile.github.io/">Hong-Wing Pang</a><sup>1</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="simple" href="https://sonhua.github.io/">Binh-Son Hua</a><sup>2</sup>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="simple" href="http://saikit.org/">Sai-Kit Yeung</a><sup>1</sup>
+      </p>
+
+      <p align="center" style="margin-bottom:20px;">
+        <sup>1</sup>Hong Kong University of Science and Technology
+        <span style="display:inline-block; width: 32px"></span>
+        <sup>2</sup>VinAI
+      </p>
+
+      <div class="venue">
+        <p align="center"> International Conference on Computer Vision (ICCV), 2023</p>
+      </div>
+
+      <figure>
+        <img src="assets/stylization_diagram.png" style="width:100%">
+        <br>
+        <img src="assets/snerf_comparison.png" style="width:100%">
+      </figure>
+      <!-- <div class="caption">
+        Demo 360-degree videos will be added later.
+      </div> -->
+
+      <br>
+
+      <div id="teaser" class="container" style="width:100%; margin:0; padding:0">
+        <h5>Abstract</h5>
+        <p align="justify">
+          In recent years, there has been increasing interest in applying stylization
+          on 3D scenes from a reference style image, in particular onto neural radiance
+          fields (NeRF). While performing stylization directly on NeRF guarantees
+          appearance consistency over arbitrary novel views, it is a challenging problem
+          to guide the transfer of patterns from the style image onto different parts of
+          the NeRF scene. In this work, we propose a stylization framework for NeRF based
+          on local style transfer. In particular, we use a hash-grid encoding to learn the
+          embedding of the appearance and geometry components, and show that the mapping
+          defined by the hash table allows us to control the stylization to a certain
+          extent. Stylization is then achieved by optimizing the appearance branch while
+          keeping the geometry branch fixed. To support local style transfer, we propose a
+          new loss function that utilizes a segmentation network and bipartite matching to
+          establish region correspondences between the style image and the content images
+          obtained from volume rendering. Our experiments show that our method yields
+          plausible stylization results with novel view synthesis while having flexible
+          controllability via manipulating and customizing the region correspondences.
+          <br>
+        </p>
+        <br>
+      </div>
+
+      <div class="section">
+        <h5>Materials</h5>
+        <!-- <div class="container" style="width:95%">
+          <div class="row">
+            <div class="two columns">
+              <img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="assets/paper_thumbnail.png">
+            </div>
+            <div class="two columns">
+              <img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 108px;" src="assets/supp_thumbnail.png">
+            </div>
+            <div class="four columns">
+              <img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 280px;" src="assets/poster_thumbnail.png">
+            </div>
+            <div class="four columns">
+              <img style="border: 1px solid #ddd; border-radius: 4px; padding: 2px; width: 277px;" src="assets/github-logo.png">
+            </div>
+          </div>
+          <div class="row" style="text-align: center;">
+            <div class="two columns">
+              Paper
+            </div>
+            <div class="two columns">
+              Supplementary
+            </div>
+            <div class="four columns">
+              Poster
+            </div>
+            <div class="four columns">
+              Code
+            </div>
+          </div>
+        </div> -->
+        
+        <p>
+          Links to paper and code will be provided in due course.
+        </p>
+      </div>
+
+      <br>
+
+      <!-- -->
+      <div class="section">
+        <h5>Citation</h5> 
+        <pre style="margin:0"><code>@inproceedings{pang-nerfstyle-iccv23,
+    title = {Locally Stylized Neural Radiance Fields},
+    author = {Hong-Wing Pang and Binh-Son Hua and Sai-Kit Yeung},
+    booktitle = {International Conference on Computer Vision (ICCV)},
+    year = {2023}
+}</code></pre>    			
+      </div>
+      
+      <!-- -->
+      <br>
+      <br>
+          
+      <div class="section">
+        <h5>Acknowledgements</h5>
+        <p>
+        This paper was partially supported by an internal grant from HKUST (R9429) and the HKUST-WeBank Joint Lab.
+        </p>
+      </div>
+      </div>
+
+      <script type="text/javascript" src="assets/jquery.min.js"></script>
+      <script type="text/javascript" src="assets/footable.min.js"></script>
+
+      <script type="text/javascript">
+        jQuery(function($){
+            $('.table').footable();
+        });
+      </script>
+    </div>
+  </body>
+</html>
